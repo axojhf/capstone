@@ -133,3 +133,6 @@ cstool/cstool
 
 # android
 android-ndk-*
+
+zig-cache/
+zig-out/
