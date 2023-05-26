@@ -1,0 +1,24 @@
+name: Capstone Build
+
+on:
+  push:
+    branches:
+      - zig
+jobs:
+  capstone-build:
+    name: Capstone Build
+    runs-on: windows-latest
+    steps:
+      - uses: goto-bus-stop/setup-zig@v2
+      - name: Build x86_64-windows-gnu
+        run: |
+          cd C:\ ; git clone --depth=1 https://github.dev/axojhf/capstone ; cd capstone
+          zig build --help ; zig build -Dtarget=x86_64-windows-gnu
+      - name: Build x86_64-linux-gnu
+        run: |
+          cd C:\capstone ; rm -r -Force C:\capstone\zig-out
+          zig build -Dtarget=x86_64-linux-gnu
+      - name: Build aarch64-linux-gnu
+        run: |
+          cd C:\capstone ; rm -r -Force C:\capstone\zig-out
+          zig build -Dtarget=aarch64-linux-gnu
