@@ -12,7 +12,7 @@ jobs:
       - uses: goto-bus-stop/setup-zig@v2
       - name: Build x86_64-windows-gnu
         run: |
-          cd C:\ ; git clone --depth=1 https://github.dev/axojhf/capstone ; cd capstone
+          cd C:\ ; git clone --depth=1 https://github.com/axojhf/capstone ; cd capstone
           zig build --help ; zig build -Dtarget=x86_64-windows-gnu
       - name: Build x86_64-linux-gnu
         run: |
