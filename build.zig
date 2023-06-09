@@ -129,6 +129,7 @@ const compile_flags: []const []const u8 = &.{
 
 const SOURCES_ENGINE: []const []const u8 = &.{
     "cs.c",
+    "Mapping.c",
     "MCInst.c",
     "MCInstrDesc.c",
     "MCRegisterInfo.c",
